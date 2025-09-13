@@ -1,0 +1,206 @@
+@property --color-top {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(255, 255, 255);
+}
+
+@property --color-bottom {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(254, 254, 254);
+}
+
+@property --tip {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background-color: black;
+  color: white;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border: 2px dotted white;
+  border-radius: 10%;
+  margin-left: 50px;
+}
+
+.button:hover {
+  background-color: rgb(52, 52, 52);
+  color: white;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 10%;
+}
+
+.jar {
+  width: 200px;
+  height: 300px;
+  border: 5px solid black;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* 25% Liquid */
+.TFPLiquid {
+  width: 100%;
+  height: 25%;
+  /* transition: --color-top 5000ms linear, --color-bottom 100ms linear; */
+  transition: --tip 3000ms cubic-bezier(0.138, 0.862, 0.981, 0.996);
+  background: linear-gradient(
+    to top,
+    rgb(6, 80, 199) 0%,
+    rgb(6, 80, 199) var(--tip),
+    white var(--tip),
+    white 100%
+  );
+  /* background: linear-gradient(to top, var(--color-bottom), var(--color-top)); */
+}
+
+/* 50% Liquid */
+.FPLiquid {
+  width: 100%;
+  height: 25%;
+  transition: --tip 3000ms cubic-bezier(0.138, 0.862, 0.981, 0.996);
+  background: linear-gradient(
+    to top,
+    rgb(6, 80, 199) 0%,
+    rgb(6, 80, 199) var(--tip),
+    white var(--tip),
+    white 100%
+  );
+}
+
+/* 75% Liquid */
+.SFPLiquid {
+  width: 100%;
+  height: 25%;
+  transition: --tip 3000ms cubic-bezier(0.138, 0.862, 0.981, 0.996);
+  background: linear-gradient(
+    to top,
+    rgb(6, 80, 199) 0%,
+    rgb(6, 80, 199) var(--tip),
+    white var(--tip),
+    white 100%
+  );
+}
+
+/* 100% Liquid */
+.OPLiquid {
+  width: 100%;
+  height: 25%;
+  transition: --tip 3000ms cubic-bezier(0.138, 0.862, 0.981, 0.996);
+  background: linear-gradient(
+    to top,
+    rgb(6, 80, 199) 0%,
+    rgb(6, 80, 199) var(--tip),
+    white var(--tip),
+    white 100%
+  );
+}
+
+.jarLid {
+  width: 80px;
+  height: 50px;
+  border: 5px solid black;
+  border-radius: 10%;
+}
+
+.jarLid.jarAnim {
+  transform: scale(1.2) translateX(-350px) rotate(-360deg) translateY(400px);
+  transition: transform 500ms ease-in-out;
+}
+
+.jarContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* transitions: fling, slide... */
+
+.jar-status {
+  font-size: 30px;
+  margin-left: 50px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.liquid {
+  width: 0px;
+  height: 0px;
+  transition: --color-top 250ms ease-in, --color-bottom 200ms ease-out;
+  background: linear-gradient(to top, var(--color-bottom), var(--color-top));
+  transition: all 1000ms ease-in-out;
+}
+
+.liquid2 {
+  width: 0px;
+  height: 0px;
+  transition: --color-top 250ms ease-in, --color-bottom 200ms ease-out;
+  background: linear-gradient(to top, var(--color-bottom), var(--color-top));
+  transition: all 600ms ease-in-out;
+  border-radius: 5%;
+}
+
+.liquid3 {
+  width: 0px;
+  height: 0px;
+  transition: --color-top 50ms ease-in, --color-bottom 50ms ease-out;
+  background: linear-gradient(to top, var(--color-bottom), var(--color-top));
+  transition: all 400ms ease-in;
+}
+.liquid4 {
+  width: 0px;
+  height: 0px;
+  transition: --color-top 50ms ease-in, --color-bottom 50ms ease-out;
+  background: linear-gradient(to top, var(--color-bottom), var(--color-top));
+  transition: all 400ms ease-in;
+}
+
+.liquid.liquidAnim {
+  width: 80px;
+  height: 200px;
+  transform: translateY(-700px);
+  transition: transform 500ms ease-in-out;
+}
+
+.liquid2.liquidAnim2 {
+  width: 80px;
+  height: 100px;
+  transform: scaleY(2) scaleX(4) translateY(-100px);
+  transition: transform 200ms ease-in-out;
+}
+
+.liquid3.liquidAnim3 {
+  width: 80px;
+  height: 100px;
+  transform: translateX(150px) translateY(110px) scaleX(2) scaleY(1);
+  transition: transform 400ms ease-in-out;
+  border-radius: 100%;
+}
+
+.liquid4.liquidAnim4 {
+  width: 80px;
+  height: 100px;
+  transform: translateX(-250px) translateY(-410px) scaleX(2) scaleY(1);
+  transition: transform 400ms ease-in-out;
+  border-radius: 100%;
+}
